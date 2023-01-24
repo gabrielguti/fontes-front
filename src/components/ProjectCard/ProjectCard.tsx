@@ -103,7 +103,7 @@ export const ProjectCard = ({ done, title, deadline, cost, zip_code, id, refetch
                         >
                             <FontAwesomeIcon icon={faX} onClick={handleChange} style={{ cursor: "pointer" }} />
                         </Stack>
-                        <ProjectForm isEdit={true} refetch={refetch} project_id={id} />
+                        <ProjectForm isEdit={true} refetch={refetch} project_id={id} handleChange={handleChange} />
                     </Stack>
                 </Modal>
 
