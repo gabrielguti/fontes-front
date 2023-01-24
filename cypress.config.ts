@@ -4,11 +4,9 @@ export default defineConfig({
     viewportWidth: 1366,
     viewportHeight: 768,
     e2e: {
-        baseUrl: "http://localhost:3000",
+        baseUrl: "http://localhost:5173",
     },
     env: {
-        REACT_APP_API_URL: "https://manager-link-teste.alibin.io",
-        DEFAULT_LINK_PATHNAME: "/link/teste",
+        REACT_APP_API_URL: "http://localhost:3000",
     },
-    video: false,
 })

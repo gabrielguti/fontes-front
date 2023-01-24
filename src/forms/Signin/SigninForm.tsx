@@ -9,13 +9,12 @@ import { toast } from "react-toastify"
 import { Button } from "../../components/Button/Button"
 import { useAuthContext } from "../../contexts/AuthContext"
 import { formFeedback } from "../../data/formFeedbackData"
-import { ErrorResponse, SuccessResponse } from "../../schemas/api.schema"
-import { AuthLoginData } from "../../schemas/authChannel.schema"
 import { PasswordInputUi } from "../../schemas/PasswordField.schema"
 import { signIn } from "../../services/Signin/SigninService"
 import { SigninResponse, SignInParams } from "../../services/Signin/SigninService.schema"
 import { SigninFormInputs } from "./SigninForm.schema"
 import { redirect } from "react-router-dom";
+import { AuthLoginData } from "../../schemas/AuthContext.schema"
 
 const defaultValues: SigninFormInputs = {
     username: "",
@@ -79,6 +78,7 @@ export const AuthForm = () => {
                     render={({ field }) => (
                         <TextField
                             {...field}
+                            data-testid='username'
                             label="Username*"
                             variant="standard"
                             sx={{ width: "100%" }}
@@ -100,6 +100,7 @@ export const AuthForm = () => {
                         return (
                             <TextField
                                 {...field}
+                                data-testid='password'
                                 label="Senha*"
                                 variant="standard"
                                 sx={{ width: "100%" }}
@@ -122,7 +123,7 @@ export const AuthForm = () => {
                         )
                     }}
                 />
-                <Button variant="primary" loading={signinMutation.isLoading} type="submit" sx={{ marginTop: "50px", width: "100%" }}>
+                <Button data-testid='submit' variant="primary" loading={signinMutation.isLoading} type="submit" sx={{ marginTop: "50px", width: "100%" }}>
                     Entrar
                 </Button>
             </form>

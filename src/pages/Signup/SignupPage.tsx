@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material"
-import { SignupForm } from "../../forms/Signup/SignupForm"
+import { SignupForm} from "../../forms/Signup/SignupForm"
 import { theme } from "../../styles/theme"
 import wallpaper from '/wallpaper.svg'
 import { Link } from "react-router-dom";

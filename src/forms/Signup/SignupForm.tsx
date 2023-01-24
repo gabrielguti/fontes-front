@@ -68,6 +68,7 @@ export const SignupForm = () => {
                     render={({ field }) => (
                         <TextField
                             {...field}
+                            data-testid='name'
                             label="Name*"
                             variant="standard"
                             sx={{ width: "100%" }}
@@ -87,6 +88,7 @@ export const SignupForm = () => {
                     render={({ field }) => (
                         <TextField
                             {...field}
+                            data-testid='username'
                             label="Username*"
                             variant="standard"
                             sx={{ width: "100%" }}
@@ -108,6 +110,7 @@ export const SignupForm = () => {
                         return (
                             <TextField
                                 {...field}
+                                data-testid='password'
                                 label="Senha*"
                                 variant="standard"
                                 sx={{ width: "100%" }}
@@ -130,7 +133,7 @@ export const SignupForm = () => {
                         )
                     }}
                 />
-                <Button variant="primary" loading={signupMutation.isLoading}  type="submit" sx={{ marginTop: "50px", width: "100%" }}>
+                <Button data-testid='submit' variant="primary" loading={signupMutation.isLoading}  type="submit" sx={{ marginTop: "50px", width: "100%" }}>
                     Cadastrar
                 </Button>
             </form>
